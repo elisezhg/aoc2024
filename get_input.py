@@ -16,12 +16,13 @@ def get_input(day, year):
         if not file_content:
             print("Fetching input...")
             res = requests.get(
-                f"https://adventofcode.com/{year}/day/{day}/input",
+                f"https://adventofcode.com/{year}/day/{int(day)}/input",
                 cookies={"session": os.getenv("SESSION")},
             )
 
             if (res.text[:-1]) != warning:
                 print("Input fetched")
+                f.seek(0)
                 f.write(res.text[:-1])  # remove '\n' at the end
             else:
                 print("Input not yet available:", warning)
