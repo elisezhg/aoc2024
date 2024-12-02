@@ -26,5 +26,3 @@ def get_input(day, year):
                 f.write(res.text[:-1])  # remove '\n' at the end
             else:
                 print("Input not yet available:", warning)
-        else:
-            print("hi")
